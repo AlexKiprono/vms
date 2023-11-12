@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<h2>Delete Visitor</h2>
+<p>Are you sure you want to delete the following visitor?</p>
+
+<p><strong>Name:</strong> {{ visitor.firstname }} {{ visitor.lastname }}</p>
+<p><strong>Email:</strong> {{ visitor.email }}</p>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <button class="btn btn-danger" type="submit">Delete</button>
+    <a href="{% url 'visitors_view' %}" class="btn btn-secondary">Cancel</a>
+</form>
+{% endblock %}

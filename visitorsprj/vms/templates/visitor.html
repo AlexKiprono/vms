@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <span class="mb-5 text-muted">
+        {% if msg %}
+            <div class="alert alert-success">
+                {{ msg | safe }}
+            </div>
+        {% endif %}
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-success">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    </span>
+    <form action="" method="POST" enctype="multipart/form-data" class="form-horizontal">
+        {% csrf_token %}
+        <div class="form-group">
+            <div class="col-sm-4">
+                {% for field in form.visible_fields %}
+                    <label for="{{ field.id_for_label }}" class="control-label">{{ field.label_tag }}</label>
+                    {{ field }}
+                {% endfor %}
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-4">
+                <button class="btn btn-primary" type="submit" id="submit" name="submit">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="row">
+    <div class="col-sm-4">
+        <label class="form-label" for="customFile">Image</label>
+        <input type="file" class="form-control form-control-sm" id="customFile" name="image">
+    </div>
+    <div class="col-sm-8">
+        <label for="email" class="form-label">Email Address</label>
+        <input class="form-control form-control-sm" id="email" name="email">
+        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-6">
+        <label for="firstname" class="form-label">First Name</label>
+        <input class="form-control form-control-sm" id="firstname" name="firstname">
+    </div>
+    <div class="col-sm-6">
+        <label for="lastname" class="form-label">Last Name</label>
+        <input class ="form-control form-control-sm" id="lastname" name="lastname">
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-6">
+        <label for="title" class="form-label">Title</label>
+        <select class="form-select form-select-sm" id="title" name="title">
+            {% for title_choice in Visitor.TITLE_CHOICES %}
+                <option value="{{ title_choice.0 }}">{{ title_choice.1 }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="col-sm-6">
+        <label for="date" class="form-label">Date</label>
+        <input class="form-control" id="date" name="date" type="date">
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-6">
+        <label for="host" class="form-label">Host</label>
+        <select class="form-select form-select-sm" id="host" name="host">
+            {% for host_choice in Visitor.HOST_CHOICES %}
+                <option value="{{ host_choice.0 }}">{{ host_choice.1 }}</option>
+            {% endfor %}
+        </select>
+    </div> -->

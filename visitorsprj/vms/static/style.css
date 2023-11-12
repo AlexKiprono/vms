@@ -1,0 +1,51 @@
+.sidebar {
+    position: fixed;
+    width: 250px;
+
+}
+
+.collapsed .sidebar {
+    width: 70px;
+}
+
+.collapsed #content {
+    margin-left: 70px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.list-group ul li:hover {
+    background-color: rgb(95, 95, 155);
+}
+
+.sidebar ul li {
+    transition: background-color 0.3s; 
+    padding: 10px 20px;
+    text-align: center;
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+}
+
+
+
+.collapsed .sidebar ul li {
+    text-align: center;
+    padding: 10px;
+    width: 70px;
+}
+
+.content {
+    margin-left: 250px;
+    padding: 15px;
+}
+
+.collapsed .content {
+    margin-left: 70px;
+}
+
+.logo img {
+    width: 100px;
+}

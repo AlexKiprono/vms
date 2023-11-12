@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Home</title>
+    <meta name="description" content="Your description here">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.2/css/bootstrap.min.css"> <!-- Include Bootstrap CSS via a CDN -->
+</head>
+<body>
+    <div class="container m-2">
+        <h1 class="display-3">HOMEPAGE</h1>
+        <p class="lead">AUTHENTICATE TO VIEW CONTENTS</p>
+        <hr class="my-2">
+        <div class="card text-center">
+            <div class="card-header">
+                <h5>HOME</h5>
+            </div>
+            <div class="card-body">
+                <p class="d-inline-flex gap-1">
+                    <a href="{% url 'login' %}" class="btn btn-primary" role="button">LOGIN</a>
+                    <a href="{% url 'register' %}" class="btn btn-primary" role="button">REGISTER</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
